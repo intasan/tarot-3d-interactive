@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Interactive Tarot 3D</title>
+<style>body{margin:0;background:#140b20;color:#fff;font-family:system-ui;text-align:center}#app{height:100vh;display:grid;place-items:center}.hint{position:fixed;bottom:24px;width:100%}</style></head>
+<body><div id="app"><div><h1>Interactive Tarot</h1><p>Card 01 · Card 02 · Card 03</p></div></div><div class="hint">Click a card to zoom and reveal text.</div>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js';
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(45,innerWidth/innerHeight,.1,100);camera.position.z=6;
+const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(devicePixelRatio);document.body.prepend(renderer.domElement);
+const group=new THREE.Group();scene.add(group);
+for(let i=0;i<3;i++){const m=new THREE.Mesh(new THREE.PlaneGeometry(1.6,2.4),new THREE.MeshBasicMaterial({color:0x5b2a86,side:THREE.DoubleSide}));m.position.x=(i-1)*1.9;m.userData.card=i+1;group.add(m)}
+const ray=new THREE.Raycaster(),mouse=new THREE.Vector2();addEventListener('pointerdown',e=>{mouse.x=e.clientX/innerWidth*2-1;mouse.y=-(e.clientY/innerHeight)*2+1;ray.setFromCamera(mouse,camera);const hit=ray.intersectObjects(group.children)[0];if(hit){group.children.forEach(x=>x.position.z=0);hit.object.position.z=.8;}});
+function animate(){requestAnimationFrame(animate);group.rotation.y+=.002;renderer.render(scene,camera)}animate();
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+</script></body></html>
