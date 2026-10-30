@@ -1,0 +1,1 @@
+No standalone JavaScript files; inline scripts inspected in source and browser where possible.

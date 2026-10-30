@@ -1,0 +1,7 @@
+Actual browser checks, 2026-10-30 UTC
+Opened app in cloud browser from the unchanged source copied to a local preview path.
+Selected card 2: observed heading ไพ่ 2 · การทบทวน, selected state true.
+Reset: observed heading ยังไม่ได้เลือกไพ่, all selected states false.
+Selected card 3: observed heading ไพ่ 3 · การลงมือทำ, card face visibly revealed.
+Screenshot card-selected-actual.jpg captured from browser. No generated image.
+Not verified: real mobile device, screen-reader audit, every browser.

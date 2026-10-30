@@ -1,20 +1,7 @@
-# Tarot 3D Interactive
+# Interactive Tarot 3D
 
-เว็บไซต์ Interactive 3D Tarot Experience
+แอปเลือกไพ่ 3 ใบ แสดงข้อความ เปิดไพ่ด้วย CSS 3D และเริ่มใหม่ได้ ไม่มี backend หรือการเก็บข้อมูลผู้ใช้ ข้อความเขียนขึ้นเพื่อสะท้อนความคิด ไม่ใช่การพยากรณ์
 
-## Features
-- Tarot.html
-- Profile / Reading pages
-- Card 01 / 02 / 03
-- Clickable cards
-- Card selection
-- Zoom interaction
-- Text interaction
-- 3D models
-- Dark purple visual theme
+เปิด `Tarot.html` ใน browser หรือเสิร์ฟไฟล์ผ่าน static HTTP server ไม่ต้องติดตั้ง dependency
 
-## Tech
-Three.js, JavaScript, GLB 3D models
-
-## Analysis Focus
-User journey, interaction requirements, page flow, navigation และ UX.
+[ภาพแอปจริง](evidence/card-selected-actual.jpg) · [ผล browser checks](evidence/browser-checks.txt) · [ขอบเขตตรวจรับ](docs/VERIFIED_SCOPE.md)
